@@ -5,7 +5,7 @@ import plotly.express as px
 st.set_page_config(page_title="Centros de vacunacion") 
 st.header('Centros de Vacunación en el Perú del 2020-21') 
 
-df = pd.read_csv('C:/Users/prccs/Desktop/centrovacunacion1.csv')
+df = pd.read_csv('centrovacunacion5.csv')
 
 df_personas= df[['nombre', 'entidad_administra']].drop_duplicates().reset_index(drop=True)
 
