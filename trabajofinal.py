@@ -53,11 +53,11 @@ longitud_selector = st.slider('Según la longitud:',
 #crear multiselectores
 entidad_selector = st.multiselect('Entidades:',
                                  entidades,
-                                   default = entidades)
+                                   default = "")
   
 nombre_selector = st.multiselect('Nombre:',
                                           nombre,
-                                         default = nombre)
+                                         default = "")
 
 
 filtros = (df['latitud'].between(*latitud_selector))&df['longitud'].between(*longitud_selector)&(df['entidad_administra'].isin(entidad_selector))&(df['nombre'].isin(nombre_selector))
