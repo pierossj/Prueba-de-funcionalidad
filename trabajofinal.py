@@ -2,8 +2,8 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-st.set_page_config(page_title="Centros de vacunacion") 
-st.header('Centros de Vacunación en el Perú del 2020-21') 
+st.set_page_config(page_title="Centros de Distribución") 
+st.header('Centros de Distribución en base a los Centros de Vacunacaión en el Perú del 2020-21') 
 
 df = pd.read_csv('centrovacunacion5.csv')
 
@@ -60,7 +60,7 @@ nombre_selector = st.multiselect('Nombre:',
                                          default = [])
 
 
-filtros = (df['latitud'].between(*latitud_selector))&df['longitud'].between(*longitud_selector)&(df['entidad_administra'].isin(entidad_selector))&(df['nombre'].isin(nombre_selector))
+filtros = (df['latitud'].between(*latitud_selector))||(df['longitud'].between(*longitud_selector))||(df['entidad_administra'].isin(entidad_selector))||(df['nombre'].isin(nombre_selector))
 
 numero_resultados = df[filtros].shape[0]
 st.subheader('Filtered Results')
