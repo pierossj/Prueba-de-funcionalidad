@@ -60,7 +60,7 @@ nombre_selector = st.multiselect('Nombre:',
                                          default = [])
 
 
-filtros = (df['latitud'].between(*latitud_selector))or(df['longitud'].between(*longitud_selector))or(df['entidad_administra'].isin(entidad_selector))or(df['nombre'].isin(nombre_selector))
+filtros = (((df['latitud'].between(*latitud_selector))or(df['longitud'].between(*longitud_selector)))or(df['entidad_administra'].isin(entidad_selector)))or(df['nombre'].isin(nombre_selector))
 
 numero_resultados = df[filtros].shape[0]
 st.subheader('Filtered Results')
