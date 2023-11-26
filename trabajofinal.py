@@ -30,7 +30,7 @@ pie_chart = px.pie(df_personas3,
 st.plotly_chart(pie_chart)
 
 
-st.subheader('Filtrar Entidades y Centros de Vacunación por Latitud y Longitud') 
+st.subheader('Filtrar Entidades y Centros de Distribución por Latitud y Longitud') 
 #Crear una lista con los parametros de una columna
 
 entidades = df['entidad_administra'].unique().tolist() 
